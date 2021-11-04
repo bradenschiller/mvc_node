@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const todoRoutes = require("./routes/todo");
+const todoRoutes = require("./src/routes/todo");
 
 app.use("/todo", todoRoutes);
 
