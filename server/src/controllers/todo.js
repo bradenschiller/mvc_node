@@ -1,21 +1,21 @@
-const todoModels = require("../models/todo");
+const taskModel = require("../models/todo");
 
-const getTodos = (req, res) => res.json(todoModels.todos);
+const getTasks = (req, res) => res.json(taskModel.tasks);
 
-const createTodos = (req, res) => {
-  const todoItem = req.body;
-  const lastTodoId = todoModels.todos.length;
-  todoModels.todos.push({
+const createTasks = (req, res) => {
+  const { taskName, taskDescription } = req.body;
+  const lastTaskId = taskModel.tasks.length;
+  taskModel.tasks.push({
     taskId: lastTodoId + 1,
+    taskName,
+    taskDescription,
     completed: false,
-    ...todoItem,
   });
 
-  res.json(todoModels.todos);
+  res.json(taskModel.tasks);
 };
 
 module.exports = {
-  getTodos,
-  createTodos,
+  getTasks,
+  createTasks,
 };
-

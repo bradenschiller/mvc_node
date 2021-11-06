@@ -1,9 +1,9 @@
-const todos = [
+const tasks = [
   {
     taskId: 1,
     taskName: "First Task",
     taskDescription: "First Task Description",
-    completed: false,
+    completed: true,
   },
   {
     taskId: 2,
@@ -13,4 +13,4 @@ const todos = [
   },
 ];
 
-exports.todos = todos;
+exports.tasks = tasks;
