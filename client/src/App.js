@@ -8,7 +8,7 @@ const getTasks = async () => {
   return res.json();
 };
 
-function App() {
+const App = () => {
   const { data } = useQuery("tasks", getTasks);
 
   return (
@@ -22,6 +22,6 @@ function App() {
         })}
     </div>
   );
-}
+};
 
 export default App;
