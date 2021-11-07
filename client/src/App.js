@@ -15,10 +15,8 @@ const App = () => {
     <div className="flex items-center flex-col">
       <h2 className="text-3xl text-blue-400">Todo List</h2>
       {data &&
-        data.map(({ taskId, taskName, completed }) => {
-          return (
-            <TaskItem key={taskId} taskName={taskName} completed={completed} />
-          );
+        data.map((task) => {
+          return <TaskItem key={task.taskId} {...task} />;
         })}
     </div>
   );
