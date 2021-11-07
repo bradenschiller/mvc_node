@@ -22,16 +22,16 @@ const updateTasks = (req, res) => {
   const { taskId } = req.params;
   const updatedTaskItem = req.body;
 
-  taskModel.splice(taskId, 1, updatedTaskItem);
+  taskModel.tasks.splice(taskModel.tasks.indexOf(taskId), 1, updatedTaskItem);
 
-  res.json(taskModel.tasks);
+  res.json(taskModel.tasks[taskId]);
 };
 
 // delete a task
 const deleteTasks = (req, res) => {
   const { taskId } = req.params;
 
-  taskModel.splice(taskId, 1);
+  taskModel.tasks.splice(taskModel.tasks.indexOf(taskId), 1);
 
   res.json(taskModel.tasks);
 };
